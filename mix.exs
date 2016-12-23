@@ -14,7 +14,7 @@ defmodule PrivatCursesPuller.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger],
+    [applications: [:logger, :quantum, :httpotion, :jsx],
      mod: {PrivatCursesPuller, []}]
   end
 
