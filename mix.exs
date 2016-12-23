@@ -30,7 +30,8 @@ defmodule PrivatCursesPuller.Mixfile do
   defp deps do
     [
       {:quantum, ">= 1.8.1"},
-      {:httpotion, "~> 3.0.2"}
+      {:httpotion, "~> 3.0.2"},
+      {:exjsx, "3.2.1"}
     ]
   end
 end
