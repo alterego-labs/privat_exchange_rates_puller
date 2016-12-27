@@ -1,5 +1,5 @@
 defmodule PrivatCursesPuller.PrivatAPI.Requesters.AuthCommercialApiTest do
-  use ExUnit.Case, async: true
+  use ExUnit.Case, async: false
 
   import Mock
 
