@@ -31,7 +31,8 @@ defmodule PrivatCursesPuller.Mixfile do
     [
       {:quantum, ">= 1.8.1"},
       {:httpotion, "~> 3.0.2"},
-      {:exjsx, "3.2.1"}
+      {:exjsx, "3.2.1"},
+      {:mock, "~> 0.2.0", only: :test}
     ]
   end
 end
