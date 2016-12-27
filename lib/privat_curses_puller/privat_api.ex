@@ -1,9 +1,14 @@
 defmodule PrivatCursesPuller.PrivatAPI do
-  alias PrivatCursesPuller.PrivatAPI.{CurseInfo, AuthInfo}
+  alias PrivatCursesPuller.PrivatAPI.AuthInfo
+  alias PrivatCursesPuller.PrivatAPI.CurseInfo, as: RatesInfo
+  alias PrivatCursesPuller.PrivatAPI.Requesters.{GetCashlessRates}
 
-  @spec get_cashless_curses :: [CurseInfo.t]
+  @doc """
+  Requests and provides cashless exchange rates information
+  """
+  @spec get_cashless_curses :: [RatesInfo.t]
   def get_cashless_curses do
-    
+    GetCashlessRates.call
   end
 
   @spec auth_commercial_api(String.t, String.t) :: AuthInfo.t
@@ -11,7 +16,7 @@ defmodule PrivatCursesPuller.PrivatAPI do
     
   end
 
-  @spec get_commercial_curses(String.t) :: [CurseInfo.t]
+  @spec get_commercial_curses(String.t) :: [RatesInfo.t]
   def get_commercial_curses(token) do
     
   end
