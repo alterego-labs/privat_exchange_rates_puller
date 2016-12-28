@@ -4,7 +4,7 @@ defmodule PrivatCursesPuller.Notifications.SlackClient do
   @spec call(RatesNotificationInfo.t) :: :ok
   def call(%RatesNotificationInfo{} = rates_notification_info) do
     headers = ["Content-Type": "application/json"]
-    {:ok, post_body_json} = rates_notification_info |> build_map_data |> JSX.decode
+    {:ok, post_body_json} = rates_notification_info |> build_map_data |> JSX.encode
     HTTPotion.post fetch_hook_url, [body: post_body_json, headers: headers]
     :ok
   end

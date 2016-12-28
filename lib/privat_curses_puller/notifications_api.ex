@@ -4,14 +4,14 @@ defmodule PrivatCursesPuller.NotificationsAPI do
   """
 
   alias PrivatCursesPuller.Notifications.SlackClient
-  alias PrivatCursesPuller.Core.CursesNotificationInfo
+  alias PrivatCursesPuller.Core.RatesNotificationInfo
 
   @type client_key :: :slack
 
   @doc """
   Sends notification to the Slack
   """
-  @spec notify(client_key, CursesNotificationInfo.t) :: none
+  @spec notify(client_key, RatesNotificationInfo.t) :: none
   def notify(:slack, curses_notification_info) do
     SlackClient.call(curses_notification_info)
   end
