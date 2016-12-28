@@ -1,8 +1,12 @@
 defmodule PrivatCursesPuller.Notifications.SlackClient do
-  alias PrivatCursesPuller.Core.CursesNotificationInfo
+  alias PrivatCursesPuller.Core.RatesNotificationInfo
 
-  @spec call(CursesNotificationInfo.t) :: none
-  def call(curses_notification_info) do
+  @spec call(RatesNotificationInfo.t) :: none
+  def call(rates_notification_info) do
     
   end
+
+  # defp build_map_data(ra do
+  #   
+  # end
 end
