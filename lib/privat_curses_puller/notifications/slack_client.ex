@@ -20,12 +20,12 @@ defmodule PrivatCursesPuller.Notifications.SlackClient do
           fields: [
             %{
               title: "Sale",
-              value: rates_notification_info.sale
+              value: rates_notification_info.sale,
               short: true
             },
             %{
               title: "Buy",
-              value: rates_notification_info.buy
+              value: rates_notification_info.buy,
               short: true
             },
             %{
