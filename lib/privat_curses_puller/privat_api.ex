@@ -1,7 +1,7 @@
 defmodule PrivatCursesPuller.PrivatAPI do
   alias PrivatCursesPuller.PrivatAPI.AuthInfo
   alias PrivatCursesPuller.PrivatAPI.CurseInfo, as: RatesInfo
-  alias PrivatCursesPuller.PrivatAPI.Requesters.{GetCashlessRates, AuthCommercialApi}
+  alias PrivatCursesPuller.PrivatAPI.Requesters.{GetCashlessRates, AuthCommercialApi, GetCommercialRates}
 
   @doc """
   Requests and provides cashless exchange rates information
@@ -19,8 +19,13 @@ defmodule PrivatCursesPuller.PrivatAPI do
     AuthCommercialApi.call(client_id, client_secret)
   end
 
+  @doc """
+  Requests and provides commercial exchange rates information.
+
+  _WARNING:_ To be able to use this API method you have to authorize using `PrivatAPI.auth_commercial_api/2` method.
+  """
   @spec get_commercial_curses(String.t) :: [RatesInfo.t]
   def get_commercial_curses(token) do
-    
+    GetCommercialRates.call(token)
   end
 end
