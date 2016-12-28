@@ -25,7 +25,16 @@ defmodule PrivatCursesPuller.PrivatAPI.Requesters.GetCashlessRates do
 
   defp transform_response(response_hash) do
     Enum.map(response_hash, fn(entry) -> 
+      entry = convert_number_values(entry)
       struct(RatesInfo, entry)
     end)
+  end
+
+  defp convert_number_values(map) do
+    old_buy = Map.get(map, :buy)
+    old_sale = Map.get(map, :sale)
+    map
+    |> Map.put(:buy, String.to_float(old_buy))
+    |> Map.put(:same, String.to_float(old_sale))
   end
 end

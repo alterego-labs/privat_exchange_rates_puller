@@ -26,6 +26,7 @@ defmodule PrivatCursesPuller.PrivatAPI.Requesters.GetCommercialRates do
       struct_map = entry
                     |> Map.get("exchangerate")
                     |> normalize_keys
+      struct_map = convert_number_values(struct_map)
       struct(RatesInfo, struct_map)
     end)
   end
@@ -37,5 +38,13 @@ defmodule PrivatCursesPuller.PrivatAPI.Requesters.GetCommercialRates do
                     |> String.to_atom
       {normal_key, val}
     end
+  end
+
+  defp convert_number_values(map) do
+    old_buy = Map.get(map, :buy)
+    old_sale = Map.get(map, :sale)
+    map
+    |> Map.put(:buy, String.to_float(old_buy))
+    |> Map.put(:same, String.to_float(old_sale))
   end
 end

@@ -21,7 +21,6 @@ defmodule PrivatCursesPuller.Core.RatesProcessorTest do
     assert %RatesNotificationInfo{} = processor_result
   end
 
-  @tag :wip
   test "call calcs ratio properly", %{processor_result: processor_result} do
     assert processor_result.ratio == 3.489
   end

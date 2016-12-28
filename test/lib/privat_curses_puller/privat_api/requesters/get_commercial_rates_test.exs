@@ -15,6 +15,7 @@ defmodule PrivatCursesPuller.PrivatAPI.Requesters.GetCommercialRatesTest do
       first_rate_info = Enum.at(rates_infos, 0)
       assert %RatesInfo{} = first_rate_info
       assert first_rate_info.ccy == "EUR"
+      assert first_rate_info.buy == 27.45311
     end 
   end
 end
