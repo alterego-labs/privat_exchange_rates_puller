@@ -16,6 +16,7 @@ defmodule PrivatCursesPuller.PrivatAPI.Requesters.GetCommercialRatesTest do
       assert %RatesInfo{} = first_rate_info
       assert first_rate_info.ccy == "EUR"
       assert first_rate_info.buy == 27.45311
+      assert first_rate_info.sale == 27.54204
     end 
   end
 end

@@ -20,7 +20,7 @@ defmodule PrivatCursesPuller.Notifications.SlackClient do
           fields: [
             %{
               title: "Target currency",
-              value: rates_notification_info.target_ccy,
+              value: rates_notification_info.ccy,
               short: false
             },
             %{

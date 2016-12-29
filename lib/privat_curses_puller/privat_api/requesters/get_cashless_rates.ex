@@ -35,6 +35,6 @@ defmodule PrivatCursesPuller.PrivatAPI.Requesters.GetCashlessRates do
     old_sale = Map.get(map, :sale)
     map
     |> Map.put(:buy, String.to_float(old_buy))
-    |> Map.put(:same, String.to_float(old_sale))
+    |> Map.put(:sale, String.to_float(old_sale))
   end
 end
