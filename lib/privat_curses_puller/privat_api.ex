@@ -6,8 +6,8 @@ defmodule PrivatCursesPuller.PrivatAPI do
   @doc """
   Requests and provides cashless exchange rates information
   """
-  @spec get_cashless_curses :: [RatesInfo.t]
-  def get_cashless_curses do
+  @spec get_cashless_rates :: [RatesInfo.t]
+  def get_cashless_rates do
     GetCashlessRates.call
   end
 
@@ -24,8 +24,8 @@ defmodule PrivatCursesPuller.PrivatAPI do
 
   _WARNING:_ To be able to use this API method you have to authorize using `PrivatAPI.auth_commercial_api/2` method.
   """
-  @spec get_commercial_curses(String.t) :: [RatesInfo.t]
-  def get_commercial_curses(token) do
+  @spec get_commercial_rates(String.t) :: [RatesInfo.t]
+  def get_commercial_rates(token) do
     GetCommercialRates.call(token)
   end
 end

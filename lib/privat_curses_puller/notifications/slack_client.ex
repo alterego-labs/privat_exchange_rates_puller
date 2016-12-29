@@ -19,6 +19,11 @@ defmodule PrivatCursesPuller.Notifications.SlackClient do
           color: info_color(rates_notification_info.ratio),
           fields: [
             %{
+              title: "Target currency",
+              value: rates_notification_info.target_ccy,
+              short: false
+            },
+            %{
               title: "Sale",
               value: rates_notification_info.sale,
               short: true
@@ -40,7 +45,9 @@ defmodule PrivatCursesPuller.Notifications.SlackClient do
   end
 
   defp fetch_hook_url do
-    Application.get_env(:privat_curses_puller, :slack_notification_hook_url)
+    :privat_curses_puller
+    |> Application.get_env(:slack_notifier)
+    |> Keyword.get(:hook_url)
   end
 
   defp info_color(ratio) when ratio <= 1.1, do: "#80FF00"
