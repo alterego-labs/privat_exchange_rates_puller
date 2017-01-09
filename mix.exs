@@ -33,7 +33,8 @@ defmodule PrivatCursesPuller.Mixfile do
       {:httpotion, "~> 3.0.2"},
       {:exjsx, "3.2.1"},
       {:mock, "~> 0.2.0", only: :test},
-      { :inflex, "~> 1.7.0" }
+      {:inflex, "~> 1.7.0"},
+      {:exrm, "~> 1.0"}
     ]
   end
 end
